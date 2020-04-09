@@ -3,7 +3,7 @@ library(reshape2)
 library(lme4)
 library(dplyr)
 
-setwd("~/git/spanish_scope/experiments/1-spanish-goal-manipulation/results/")
+setwd("~/GitHub/spanish_scope/experiments/1-spanish-goal-manipulation/results/")
 
 source("helpers.r")
 
@@ -77,5 +77,6 @@ e_quantifier_no_context_plot = ggplot(data=e_quantifier_no_context_s,aes(x=QUD,y
   #labs(fill="early-success")+
   #facet_wrap(~QUD)+
   theme_bw()#+
-e_quantifier_no_context_plot
-#ggsave("spanish-quantifier-no-context.png")
+e_quantifier_no_context_plot + theme(text = element_text(size = 35))   
+ggsave("spanish-quantifier-no-context.png")
+
