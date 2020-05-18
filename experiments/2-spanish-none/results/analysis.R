@@ -4,6 +4,7 @@ library(lme4)
 library(dplyr)
 
 setwd("/Users/Abimael/documents/GitHub/spanish_scope/experiments/1-spanish-goal-manipulation/results/")
+setwd("~/git/spanish_scope/experiments/2-spanish-none/results/")
 
 source("helpers.r")
 
@@ -15,12 +16,14 @@ d = d[d$lived=="both8"&d$years=="mostlive",]
 
 # only Spanish as native language
 d = d[d$language!=""&
-        d$language!="Chile"&
-        d$language!="México"&
-        d$language!="Castellano y asturiano",]
+        d$language!="Ucraniano Ruso"&
+        d$language!="español e ingles"&
+        d$language!="Español, English"&
+        d$language!="Spanish/Español"&
+        d$language!="Inglés",]
 unique(d$language)
 
-length(unique(d$participant_id)) # n=586 (600)
+length(unique(d$participant_id)) # n=197 (250)
 
 ################################
 

@@ -125,7 +125,7 @@ turk = turk || {};
       // document.body.appendChild(div);
       $.ajax({
           type: 'POST',
-          url: 'https://bayes.langsci.uci.edu/meaninglab/scope/spanish/1-spanish-goal-manipulation/submit.php',
+          url: 'https://bayes.langsci.uci.edu/meaninglab/scope/spanish/2-spanish-none/submit.php',
           dataType: 'json',
           data: {'jsonData': JSON.stringify(rawData)}
       });

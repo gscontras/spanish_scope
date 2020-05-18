@@ -228,7 +228,8 @@ function make_slides(f) {
       exp.context = _.sample(["without","with"]);
       exp.number = _.sample(["two","four"]);
       //exp.number = "four"
-      exp.QUD = _.sample(["all","none","many"])
+      // exp.QUD = _.sample(["all","none","many"])
+      exp.QUD = "none"
       //here to test out different examples (i.e. link a picture and see if there
       //are any formatting difficulties)
       //exp.QUD = "many"
