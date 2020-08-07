@@ -4,6 +4,8 @@ library(lme4)
 library(dplyr)
 
 setwd("/Users/Abimael/documents/GitHub/spanish_scope/experiments/1-spanish-goal-manipulation/results/")
+#setwd("~/git/spanish_scope/experiments/1-spanish-goal-manipulation/Results/")
+
 
 source("helpers.r")
 
@@ -78,5 +80,15 @@ e_quantifier_no_context_plot = ggplot(data=e_quantifier_no_context_s,aes(x=QUD,y
   #facet_wrap(~QUD)+
   theme_bw()#
 e_quantifier_no_context_plot + theme(text = element_text(size = 35))   
-ggsave("spanish-quantifier-no-context.png")
+#ggsave("spanish-quantifier-no-context.png")
+
+
+
+##### 
+
+d$QUD = factor(d$QUD,labels=c("2-all","1-many","3-none"))
+d$QUD = factor(d$QUD,levels=c("1-many","2-all","3-none"))
+
+summary(glm(response~QUD,data=d[d$quantifier=="every",]))
+
 
