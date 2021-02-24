@@ -1,6 +1,9 @@
 # Load ggplot2
 library(ggplot2)
 
+setwd("~/git/spanish_scope/experiments/plotcolor/")
+
+
 # Create data
 data <- data.frame(
   QUD=c("None","Many", "All") ,  
@@ -11,11 +14,11 @@ data <- data.frame(
 high_many_qud = ggplot(data, aes(x=reorder(QUD, response),y=response)) + 
   geom_bar(stat = "identity",fill = c("#d87609","#b58a08", "#879b04"),color ="black", position=position_dodge())+ 
   ylim(0,1)+
-  ylab("endorsement rate") +
-  xlab("QUD")+
+  ylab("model endorsement\n") +
+  xlab("\nQUD")+
   theme_bw()
-high_many_qud + theme(text = element_text(size = 25))
-ggsave("model_pre.png")
+high_many_qud #+ theme(text = element_text(size = 25))
+#ggsave("model_pre.png",height=2,width=2.5)
 ########
 
 # Create data for Spanish
@@ -30,11 +33,11 @@ data <- data.frame(
 high_many_qud = ggplot(data, aes(x=reorder(QUD, response2),y=response2)) + 
   geom_bar(stat = "identity",fill = c("#d87609","#b58a08", "#879b04"),color ="black", position=position_dodge())+ 
   ylim(0,1)+
-  ylab("endorsement rate") +
-  xlab("QUD")+
+  ylab("model endorsement\n") +
+  xlab("\nQUD")+
   theme_bw()
-high_many_qud + theme(text = element_text(size = 25))
-ggsave("spanish_pre.png")
+high_many_qud #+ theme(text = element_text(size = 25))
+#ggsave("spanish_pre.png",height=2,width=2.5)
   
 #colors
 fill = c("#d87609","#b58a08", "#879b04")
