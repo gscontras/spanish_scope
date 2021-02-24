@@ -11,7 +11,8 @@ source("helpers.r")
 
 d = read.csv("results.csv",header=T)
 
-unique(d$language)
+length(unique(d$language))
+length(unique(d$participant_id))
 
 d = d[d$lived=="both8"&d$years=="mostlive",]
 
@@ -70,7 +71,7 @@ context_plot
 
 
 e_quantifier_no_context_s = bootsSummary(data=d[d$quantifier=="every",], measurevar="response", groupvars=c("QUD"))
-#e_quantifier_no_context_s
+e_quantifier_no_context_s
 
 #e_quantifier_no_context_s = e_quantifier_no_context_s[nrow(e_quantifier_no_context_s):1,]
 
