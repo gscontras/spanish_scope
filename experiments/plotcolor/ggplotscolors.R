@@ -6,7 +6,7 @@ setwd("~/git/spanish_scope/experiments/plotcolor/")
 
 # Create data
 data <- data.frame(
-  QUD=c("None","Many", "All") ,  
+  QUD=c("none","many", "all") ,  
   response=c(0.2811466072455673,0.36634588972698934,0.6349921886602219)
 )
 #model prediction
@@ -23,7 +23,7 @@ high_many_qud #+ theme(text = element_text(size = 25))
 
 # Create data for Spanish
 data <- data.frame(
-  QUD=c("None","Many", "All") ,  
+  QUD=c("none","many", "all") ,  
   response2=c(0.4363080506623963
 ,0.4836014213445037
 ,0.6355700133392889)
