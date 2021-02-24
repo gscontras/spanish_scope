@@ -11,6 +11,14 @@ source("helpers.r")
 
 d = read.csv("results.csv",header=T)
 
+full_data <- d
+nrow(full_data) #n=762
+
+every_data=full_data[full_data$quantifier=="every",]
+nrow(every_data) #n=400
+
+d <- every_data
+
 length(unique(d$language))
 length(unique(d$participant_id))
 
@@ -23,7 +31,7 @@ d = d[d$language!=""&
         d$language!="Castellano y asturiano",]
 unique(d$language)
 
-length(unique(d$participant_id)) # n=586 (600)
+length(unique(d$participant_id)) # n=310 (400)
 
 ################################
 
@@ -89,11 +97,14 @@ ggsave("spanish-quantifier-no-context.png")
 
 
 
-##### 
 
-d$QUD = factor(d$QUD,labels=c("2-all","1-many","3-none"))
-d$QUD = factor(d$QUD,levels=c("1-many","2-all","3-none"))
 
-summary(glm(response~QUD,data=d[d$quantifier=="every",]))
+## fitting a model to predict results
+
+d$QUD <- factor(d$QUD,levels=c("many","all","none"))
+
+summary(lmer(response~QUD+(1|item),data=d))
+
+
 
 
