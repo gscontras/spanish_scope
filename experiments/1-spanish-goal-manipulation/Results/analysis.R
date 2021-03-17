@@ -33,6 +33,9 @@ unique(d$language)
 
 length(unique(d$participant_id)) # n=310 (400)
 
+#write.csv(d,"spanish-results.csv")
+
+
 ################################
 
 t <- d
