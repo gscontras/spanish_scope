@@ -12,7 +12,7 @@ data <- data.frame(
 #model prediction
 # Barplot
 high_many_qud = ggplot(data, aes(x=reorder(QUD, response),y=response)) + 
-  geom_bar(stat = "identity",fill = c("#d87609","#b58a08", "#879b04"),color ="black", position=position_dodge())+ 
+  geom_bar(stat = "identity",fill = c( "#879b04","#b58a08","#d87609"),color ="black", position=position_dodge())+ 
   ylim(0,1)+
   ylab("model endorsement\n") +
   xlab("\nQUD")+
